@@ -1,5 +1,4 @@
 import math
-import time
 
 def factorial(n):
    return math.factorial(n)
@@ -14,7 +13,6 @@ def hat_check(n):
         hc[i] = factorial(i) - sum([c(i, i-j) * hc[j] for j in range(i)])
     return hc[n]
 
-for i in range(50):
-    start_time = time.time()
-    print(i, hat_check(i))
-    # print(i, time.time() - start_time)
+if __name__ == "__main__":
+    for i in range(50):
+        print(i, hat_check(i))
