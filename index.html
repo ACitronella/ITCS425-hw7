@@ -35,7 +35,7 @@
                     hc[i] = factorial(i) - sum([c(i, i-j) * hc[j] for j in range(i)])
                 return hc[n]
             `);
-            print("setup pyodide done")
+            console.log("setup pyodide done");
         }
         function hat_check_js(n){
             return pyodide.runPython(`hat_check(${n})`)
@@ -53,7 +53,7 @@
                     hc_output.value = ""
                 }
             });
-            print("setup event listener done")
+            console.log("setup event listener done")
         }
         python_setup();
         event_listener_setup();
