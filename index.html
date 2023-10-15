@@ -5,14 +5,12 @@
       <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
   </head>
   <body>
-    Pyodide test page <br>
-    Open your browser console to see Pyodide output
     <form action="">
         <label for="hc input">Hat check input:</label>
         <input id="hc input" type="number"/>
         <br/>
         <label for="hc output">Hat check output:</label>
-        <input id="hc output" type="number"/>
+        <span id="hc output" type="number"/>
     </form>
     <script type="text/javascript">
         let pyodide;
@@ -47,10 +45,10 @@
                 const n = event.target.value;
                 try{
                     const hc_v = hat_check_js(event.target.value)
-                    hc_output.value = hc_v
+                    hc_output.textContent = hc_v
                 }
                 catch{
-                    hc_output.value = ""
+                    hc_output.textContent = ""
                 }
             });
             console.log("setup event listener done")
